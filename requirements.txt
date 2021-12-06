@@ -1,0 +1,2 @@
+# Editable Git install with no remote (advent-2021-mathias-gesbert==0.0.1)
+-e /Users/x/code/sandbox/advent/src
