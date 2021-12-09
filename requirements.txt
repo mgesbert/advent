@@ -1,2 +1,10 @@
-# Editable Git install with no remote (advent-2021-mathias-gesbert==0.0.1)
--e /Users/x/code/sandbox/advent/src
+advent-2021-mathias-gesbert==0.0.1
+-e git+ssh://git@github.com/mgesbert/advent.git@989732a7a05095e73ae0b19074179b013c606a39#egg=advent_mathias_gesbert
+black==21.12b0
+click==8.0.3
+mypy-extensions==0.4.3
+pathspec==0.9.0
+platformdirs==2.4.0
+regex==2021.11.10
+tomli==1.2.2
+typing_extensions==4.0.1
