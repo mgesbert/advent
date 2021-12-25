@@ -48,7 +48,6 @@ def possible_moves(hallway: list[str], pods: dict[str, list[str]]):
 
 if __name__ == "__main__":
     hallway = ["."] * 11
-    # pods = {"A": ["C", "B"], "B": ["D", "A"], "C": ["A", "D"], "D": ["B", "C"]}
     pods = {
         "A": ["C", "D", "D", "B"],
         "B": ["D", "C", "B", "A"],
