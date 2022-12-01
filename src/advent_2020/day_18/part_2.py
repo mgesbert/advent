@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 from advent_2020.helpers import get_input
 
@@ -7,12 +8,12 @@ class CustomInt(int):
     def __init__(self, n: int):
         self.n = n
 
-    def __add__(self, other):
+    def __add__(self, other: Any):
         if not isinstance(other, CustomInt):
             raise TypeError()
         return CustomInt(self.n * other.n)
 
-    def __mul__(self, other):
+    def __mul__(self, other: Any):
         if not isinstance(other, CustomInt):
             raise TypeError()
         return CustomInt(self.n + other.n)

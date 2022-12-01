@@ -1,6 +1,6 @@
 import re
 
-import regex
+import regex  # type: ignore
 from advent_2020.helpers import get_input
 
 
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
             if (
                 re.fullmatch(rf"({rule_42})+", s1) is not None
-                and regex.fullmatch(rf"({rule_42})(?:(?R))*+({rule_31})", s2)
+                and regex.fullmatch(rf"({rule_42})(?:(?R))*+({rule_31})", s2)  # type: ignore
                 is not None
             ):
                 count += 1
