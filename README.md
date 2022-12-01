@@ -1,4 +1,4 @@
-# Advent of Code 2021
+# Advent of Code
 
 This repo holds my solutions to https://adventofcode.com/
 
