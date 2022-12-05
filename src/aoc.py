@@ -22,7 +22,7 @@ def has_sample():
 def get_sample():
     with open(sample_file, "r") as f:
         for l in f:
-            yield l.strip()
+            yield l
 
 
 def get_data():
@@ -32,7 +32,7 @@ def get_data():
 
     with open(data_file, "r") as f:
         for l in f:
-            yield l.strip()
+            yield l
 
 
 def init_solution():
