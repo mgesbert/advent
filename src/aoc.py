@@ -22,7 +22,7 @@ def has_sample():
 def get_sample():
     with open(sample_file, "r") as f:
         for l in f:
-            yield l
+            yield l.strip("\n")
 
 
 def get_data():
@@ -32,7 +32,7 @@ def get_data():
 
     with open(data_file, "r") as f:
         for l in f:
-            yield l
+            yield l.strip("\n")
 
 
 def init_solution():
@@ -46,7 +46,7 @@ def init_solution():
             )
 
     # init this file as there is no way to fetch it automatically
-    # there is no other way than copy/pasting the sample data in it
+    # copy/paste the sample data in it if needed
     if not exists(sample_file):
         with open(sample_file, "w") as f:
             f.write("")
