@@ -1,14 +1,3 @@
-def dfs_with_side_effect(fs, sizes):
-    i = len(sizes)
-    sizes.append(0)
-    for node in fs.values():
-        if isinstance(node, int):
-            sizes[i] += node
-            continue
-        sizes[i] += dfs_with_side_effect(node, sizes)
-    return sizes[i]
-
-
 def build_fs(input_data):
     fs = {}
     dir_stack = []
@@ -33,11 +22,18 @@ def build_fs(input_data):
     return fs
 
 
-def get_dir_sizes(fs):
-    dir_sizes = []
-    dfs_with_side_effect(fs, dir_sizes)
-
-    return dir_sizes
+def get_dir_sizes(fs, sizes=None):
+    if sizes is None:
+        sizes = []
+    i = len(sizes)
+    sizes.append(0)
+    for node in fs.values():
+        if isinstance(node, int):
+            sizes[i] += node
+            continue
+        rec_call_index = len(sizes)
+        sizes[i] += get_dir_sizes(node, sizes)[rec_call_index]
+    return sizes
 
 
 def part_1(input_data):
