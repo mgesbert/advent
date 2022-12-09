@@ -1,7 +1,3 @@
-def is_too_far(head, tail):
-    return abs(head.real - tail.real) > 1 or abs(head.imag - tail.imag) > 1
-
-
 def move_head(head, direction):
     return (
         head
@@ -15,7 +11,7 @@ def move_head(head, direction):
 
 
 def move_tail(head, tail):
-    if not is_too_far(head, tail):
+    if abs(head - tail) < 2:
         return tail
     if head.real > tail.real:
         tail += 1
