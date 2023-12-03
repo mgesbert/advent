@@ -15,12 +15,12 @@ def parse_args():
     return today.day, today.year
 
 
-def has_sample():
-    return any(get_sample())
+def has_sample(file):
+    return exists(file) and getsize(file) > 0
 
 
-def get_sample():
-    with open(sample_file, "r") as f:
+def get_sample(file):
+    with open(file, "r") as f:
         for l in f:
             yield l.strip("\n")
 
@@ -58,17 +58,23 @@ if __name__ == "__main__":
     solution_file = join(dirname(__file__), str(year), "algo", f"day_{day}.py")
     data_file = join(dirname(__file__), str(year), "data", f"day_{day}.txt")
     sample_file = join(dirname(__file__), str(year), "sample", f"day_{day}.txt")
+    sample_file_1 = join(dirname(__file__), str(year), "sample", f"day_{day}_1.txt")
+    sample_file_2 = join(dirname(__file__), str(year), "sample", f"day_{day}_2.txt")
 
     init_solution()
 
     solution = importlib.import_module(f"{year}.algo.day_{day}")
 
     print("===== Part 1 =====")
-    if has_sample():
-        print(f" - sample: {solution.part_1(get_sample())}")
+    if has_sample(sample_file):
+        print(f" - sample: {solution.part_1(get_sample(sample_file))}")
+    elif has_sample(sample_file_1):
+        print(f" - sample: {solution.part_1(get_sample(sample_file_1))}")
     print(f" - data: {solution.part_1(get_data())}")
     print()
     print("===== Part 2 =====")
-    if has_sample():
-        print(f" - sample: {solution.part_2(get_sample())}")
+    if has_sample(sample_file):
+        print(f" - sample: {solution.part_2(get_sample(sample_file))}")
+    elif has_sample(sample_file_2):
+        print(f" - sample: {solution.part_2(get_sample(sample_file_2))}")
     print(f" - data: {solution.part_2(get_data())}")

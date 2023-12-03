@@ -26,8 +26,6 @@ def replace_digits(line):
         word = next((k for k in translations.keys() if line[i:].startswith(k)), None)
         if word:
             res += translations[word]
-            for _ in range(len(word) - 1):
-                next(c for c in line)
         else:
             res += c
 
