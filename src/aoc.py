@@ -61,20 +61,35 @@ if __name__ == "__main__":
     sample_file_1 = join(dirname(__file__), str(year), "sample", f"day_{day}_1.txt")
     sample_file_2 = join(dirname(__file__), str(year), "sample", f"day_{day}_2.txt")
 
+    def run_sample_1():
+        if has_sample(sample_file):
+            print(f" - sample: {solution.part_1(get_sample(sample_file))}")
+        elif has_sample(sample_file_1):
+            print(f" - sample: {solution.part_1(get_sample(sample_file_1))}")
+
+    def run_data_1():
+        print(f" - data: {solution.part_1(get_data())}")
+
+    def run_sample_2():
+        if has_sample(sample_file):
+            print(f" - sample: {solution.part_2(get_sample(sample_file))}")
+        elif has_sample(sample_file_2):
+            print(f" - sample: {solution.part_2(get_sample(sample_file_2))}")
+
+    def run_data_2():
+        print(f" - data: {solution.part_2(get_data())}")
+
     init_solution()
 
     solution = importlib.import_module(f"{year}.algo.day_{day}")
 
     print("===== Part 1 =====")
-    if has_sample(sample_file):
-        print(f" - sample: {solution.part_1(get_sample(sample_file))}")
-    elif has_sample(sample_file_1):
-        print(f" - sample: {solution.part_1(get_sample(sample_file_1))}")
-    print(f" - data: {solution.part_1(get_data())}")
+
+    run_sample_1()
+    run_data_1()
+
     print()
     print("===== Part 2 =====")
-    if has_sample(sample_file):
-        print(f" - sample: {solution.part_2(get_sample(sample_file))}")
-    elif has_sample(sample_file_2):
-        print(f" - sample: {solution.part_2(get_sample(sample_file_2))}")
-    print(f" - data: {solution.part_2(get_data())}")
+
+    run_sample_2()
+    run_data_2()
