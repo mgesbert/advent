@@ -13,11 +13,20 @@ python3 -m pip install -e .
 python3 -m pip install -r requirements.txt
 ```
 
-And then, to run a solution:
+## How to use?
+
+Run for today:
 
 ```bash
 . .env/bin/activate
-python3 src/advent_2021/day_1/part_1.py
+python3 src/aoc.py
+```
+
+Run for a given day (e.g. day 1 of 2024):
+
+```bash
+. .env/bin/activate
+python3 src/aoc.py 1 2024
 ```
 
 ## License

@@ -32,8 +32,9 @@ def next_ranges(seed_start, seed_count, mapping):
         seed_start, seed_count = stack.pop(0)
         for dest, start, count in mapping:
             if start <= seed_start < start + count:
-                yield dest + seed_start - start, min(
-                    seed_count, start + count - seed_start
+                yield (
+                    dest + seed_start - start,
+                    min(seed_count, start + count - seed_start),
                 )
                 if seed_start + seed_count >= start + count:
                     stack.append(

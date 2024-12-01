@@ -1,6 +1,5 @@
 import re
 
-from sympy import Symbol
 from sympy.solvers import solve
 
 
@@ -23,7 +22,6 @@ def part_2(input_data):
         for k, v in data.items():
             if k in expr:
                 expr = expr.replace(k, f"({v})")
-    humn = Symbol(name="humn")
     return int(solve(eval(expr))[0])
 
 

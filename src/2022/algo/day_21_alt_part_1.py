@@ -1,6 +1,5 @@
 import re
 
-
 with open("src/2022/data/day_21.txt") as f:
     instructions = [
         "def " + re.sub(r"([a-zA-Z]+)", r"\1()", line).replace(":", ": return")
@@ -8,4 +7,4 @@ with open("src/2022/data/day_21.txt") as f:
     ]
 
 exec("".join(instructions))
-print(int(root()))
+print(int(root()))  # type: ignore # noqa: F821

@@ -65,7 +65,6 @@ def dijkstra(blocks, height, width, min_steps, max_steps):
 
 
 def heat_loss_over(blocks, start, end):
-    x = start
     delta = (end - start) / abs(end - start)
     result = 0
     while start != end:

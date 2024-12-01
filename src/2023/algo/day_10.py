@@ -41,13 +41,19 @@ def part_1(input_data):
     prev_x1, prev_y1 = prev_x2, prev_y2 = x, y
     distance = 1
     while (x1, y1) != (x2, y2):
-        (x1, y1), (prev_x1, prev_y1) = next_node(map_, x1, y1, prev_x1, prev_y1), (
-            x1,
-            y1,
+        (x1, y1), (prev_x1, prev_y1) = (
+            next_node(map_, x1, y1, prev_x1, prev_y1),
+            (
+                x1,
+                y1,
+            ),
         )
-        (x2, y2), (prev_x2, prev_y2) = next_node(map_, x2, y2, prev_x2, prev_y2), (
-            x2,
-            y2,
+        (x2, y2), (prev_x2, prev_y2) = (
+            next_node(map_, x2, y2, prev_x2, prev_y2),
+            (
+                x2,
+                y2,
+            ),
         )
         distance += 1
     return distance
@@ -76,9 +82,12 @@ def part_2(input_data):
     prev_x1, prev_y1 = x, y
     while (x1, y1) not in loop_nodes:
         loop_nodes.add((x1, y1))
-        (x1, y1), (prev_x1, prev_y1) = next_node(map_, x1, y1, prev_x1, prev_y1), (
-            x1,
-            y1,
+        (x1, y1), (prev_x1, prev_y1) = (
+            next_node(map_, x1, y1, prev_x1, prev_y1),
+            (
+                x1,
+                y1,
+            ),
         )
     loop_area = 0
     for y in range(len(map_)):

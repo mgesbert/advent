@@ -43,7 +43,6 @@ def part_2(input_data):
         return visited
 
     lines = list(input_data)
-    flow: dict[tuple[int, int], int] = {}
     low_points = [
         (x, y)
         for y, line in enumerate(lines)

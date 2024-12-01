@@ -9,7 +9,6 @@ def part_1(input_data):
     cave = [[int(x) for x in line] for line in input_data]
     width = len(cave[0])
     height = len(cave)
-    size = width * height
 
     G = nx.DiGraph()
 
@@ -48,7 +47,6 @@ def part_2(input_data):
 
     width = len(whole_cave[0])
     height = len(whole_cave)
-    size = width * height
 
     G = nx.DiGraph()
 

@@ -34,7 +34,6 @@ def part_2(input_data):
 
     start = 0
     for j, line in enumerate(input_data):
-        width = len(line)
         for i, c in enumerate(line):
             if c == "#":
                 rocks.add(i + j * 1j)
@@ -50,8 +49,7 @@ def part_2(input_data):
             pos + 1j**i
             for pos in positions
             for i in range(4)
-            if (pos + 1j**i).real % DIM + ((pos + 1j**i).imag % DIM) * 1j
-            not in rocks
+            if (pos + 1j**i).real % DIM + ((pos + 1j**i).imag % DIM) * 1j not in rocks
         }
         if (i + 1) % DIM == DIM // 2:
             results.append(len(positions))
