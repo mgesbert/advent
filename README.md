@@ -26,7 +26,7 @@ Run for a given day (e.g. day 1 of 2024):
 
 ```bash
 . .env/bin/activate
-python3 src/aoc.py 1 2024
+python3 src/aoc.py 2024 1
 ```
 
 ## License
